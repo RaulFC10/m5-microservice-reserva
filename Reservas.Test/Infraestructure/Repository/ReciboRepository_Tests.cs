@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reservas.Test.Infraestructure.Repository
-{
-    internal class ReciboRepository_Tests
-    {
-    }
+namespace Reservas.Test.Infraestructure.Repository {
+	internal class ReciboRepository_Tests {
+	}
 }

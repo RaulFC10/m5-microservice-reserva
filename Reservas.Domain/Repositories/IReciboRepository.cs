@@ -2,9 +2,7 @@
 using ShareKernel.Core;
 using System;
 
-namespace Reservas.Domain.Repositories
-{
-    public interface IReciboRepository : IRepository<Recibo, Guid>
-    {
-    }
+namespace Reservas.Domain.Repositories {
+	public interface IReciboRepository : IRepository<Recibo, Guid> {
+	}
 }

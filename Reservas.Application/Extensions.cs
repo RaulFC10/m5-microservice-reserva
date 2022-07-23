@@ -6,31 +6,28 @@ using Reservas.Domain.Factories;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace Reservas.Application
-{
-    [ExcludeFromCodeCoverage]
-    public static class Extensions
-    {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
-        {
-            services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddTransient<IReservaService, ReservaService>();
-            services.AddTransient<IReservaFactory, ReservaFactory>();
+namespace Reservas.Application {
+	[ExcludeFromCodeCoverage]
+	public static class Extensions {
+		public static IServiceCollection AddApplication(this IServiceCollection services) {
+			services.AddMediatR(Assembly.GetExecutingAssembly());
+			services.AddTransient<IReservaService, ReservaService>();
+			services.AddTransient<IReservaFactory, ReservaFactory>();
 
-            services.AddTransient<IPagoFactory, PagoFactory>();
+			services.AddTransient<IPagoFactory, PagoFactory>();
 
 
-       
-            services.AddTransient<IFacturaFactory, FacturaFactory>();
-            services.AddTransient<IFacturaService, FacturaService>();
 
-            services.AddTransient<IReciboFactory, ReciboFactory>();
-            services.AddTransient<IReciboService, ReciboService>();
+			services.AddTransient<IFacturaFactory, FacturaFactory>();
+			services.AddTransient<IFacturaService, FacturaService>();
 
-            services.AddTransient<IAnulacionFactory, AnulacionFactory>();
+			services.AddTransient<IReciboFactory, ReciboFactory>();
+			services.AddTransient<IReciboService, ReciboService>();
+
+			services.AddTransient<IAnulacionFactory, AnulacionFactory>();
 
 
-            return services;
-        }
-    }
+			return services;
+		}
+	}
 }

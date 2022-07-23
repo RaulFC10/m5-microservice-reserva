@@ -1,19 +1,16 @@
 ﻿using System;
 
-namespace ShareKernel.Core
-{
-    public abstract record ValueObject
-    {
-        public void CheckRule(IBussinessRule rule)
-        {
-            if (rule is null)
-            {
-                throw new ArgumentException("Rule cannot be null");
-            }
-            if (!rule.IsValid())
-            {
-                throw new BussinessRuleValidationException(rule);
-            }
-        }
-    }
+namespace ShareKernel.Core {
+	public abstract record ValueObject {
+		public void CheckRule(IBussinessRule rule) {
+			if (rule is null)
+			{
+				throw new ArgumentException("Rule cannot be null");
+			}
+			if (!rule.IsValid())
+			{
+				throw new BussinessRuleValidationException(rule);
+			}
+		}
+	}
 }

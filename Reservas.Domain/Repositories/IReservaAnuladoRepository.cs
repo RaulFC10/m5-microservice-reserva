@@ -2,9 +2,7 @@
 using ShareKernel.Core;
 using System;
 
-namespace Reservas.Domain.Repositories
-{
-    public interface IReservaAnuladoRepository : IRepository<ReservaAnulado, Guid>
-    {
-    }
+namespace Reservas.Domain.Repositories {
+	public interface IReservaAnuladoRepository : IRepository<ReservaAnulado, Guid> {
+	}
 }

@@ -2,10 +2,8 @@
 using ShareKernel.Core;
 using System;
 
-namespace Reservas.Domain.Repositories
-{
-    public interface IFacturaRepository : IRepository<Factura, Guid>
-    {
+namespace Reservas.Domain.Repositories {
+	public interface IFacturaRepository : IRepository<Factura, Guid> {
 
-    }
+	}
 }

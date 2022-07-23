@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reservas.Domain.Repositories
-{
-    public interface IUnitOfWork
-    {
-        Task guardar();
-        Task Commit();
-    }
+namespace Reservas.Domain.Repositories {
+	public interface IUnitOfWork {
+		Task guardar();
+		Task Commit();
+	}
 }

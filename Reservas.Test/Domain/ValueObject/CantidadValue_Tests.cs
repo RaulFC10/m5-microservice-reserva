@@ -6,18 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Reservas.Test.Domain.ValueObject
-{
-    public record CantidadValue_Tests
-    {
-        [Fact]
-        public void CantidadValue_CheckPropertiesValid()
-        {
-            var value = 100;
-            var importePagadoTest = new CantidadValue(value);
-            Assert.Equal(100, Convert.ToInt32(importePagadoTest));
+namespace Reservas.Test.Domain.ValueObject {
+	public record CantidadValue_Tests {
+		[Fact]
+		public void CantidadValue_CheckPropertiesValid() {
+			var value = 100;
+			var importePagadoTest = new CantidadValue(value);
+			Assert.Equal(100, Convert.ToInt32(importePagadoTest));
 
-        }
+		}
 
-    }
+	}
 }

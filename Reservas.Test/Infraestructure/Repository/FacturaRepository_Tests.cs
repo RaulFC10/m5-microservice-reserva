@@ -12,23 +12,20 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Xunit;
 
-namespace Reservas.Test.Infraestructure.Repository
-{
-    public class FacturaRepository_Tests 
-    {
-        public readonly DbSet<Factura> _factura;
-        public readonly Mock<WriteDbContext> context;
-        public FacturaRepository_Tests()
-        {
-            context = new Mock<WriteDbContext>();
-            _factura = context.Object.Factura;
+namespace Reservas.Test.Infraestructure.Repository {
+	public class FacturaRepository_Tests {
+		public readonly DbSet<Factura> _factura;
+		public readonly Mock<WriteDbContext> context;
+		public FacturaRepository_Tests() {
+			context = new Mock<WriteDbContext>();
+			_factura = context.Object.Factura;
 
 
-        }
+		}
 
 
- 
-        /*
+
+		/*
         private readonly Mock<IFacturaRepository> _repositoryFactura;
 
         public FacturaRepository_Tests()
@@ -66,5 +63,5 @@ namespace Reservas.Test.Infraestructure.Repository
 
         }
         */
-    }
+	}
 }
