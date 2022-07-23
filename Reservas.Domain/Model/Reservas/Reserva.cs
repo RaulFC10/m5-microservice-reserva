@@ -32,7 +32,6 @@ namespace Reservas.Domain.Model.Reservas {
 			DateTime horaActual = DateTime.Now;
 			DateTime horaLimite = horaActual.AddHours(2);
 
-
 			Id = Guid.NewGuid();
 			IdVuelo = idVuelo;
 			NroReserva = nroReserva;
