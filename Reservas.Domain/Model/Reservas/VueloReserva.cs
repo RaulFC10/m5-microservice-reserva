@@ -9,6 +9,7 @@ namespace Reservas.Domain.Model.Reservas {
 		public bool Activo { get; private set; }
 
 		internal VueloReserva(Guid idPasajero, decimal costo) {
+
 			Id = Guid.NewGuid();
 			IdPasajero = idPasajero;
 			Costo = costo;
