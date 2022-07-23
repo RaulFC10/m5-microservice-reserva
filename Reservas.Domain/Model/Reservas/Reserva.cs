@@ -26,7 +26,8 @@ namespace Reservas.Domain.Model.Reservas {
 			get {
 				return new ReadOnlyCollection<VueloReserva>(_vueloReserva.ToList());
 			}
-		}
+
+
 		private Reserva() { }
 		public Reserva(Guid idVuelo, string nroReserva, DateTime fechaVuelo) {
 			DateTime horaActual = DateTime.Now;
