@@ -15,11 +15,11 @@ namespace Reservas.Domain.Model.Reservas {
 			Costo = costo;
 			Activo = true;
 		}
-		private VueloReserva() {
+		private VueloReserva() { }
 
-			internal void ModificarReserva(Guid idPasajero, decimal costo) {
-				Costo = costo;
-				IdPasajero = idPasajero;
-			}
+		internal void ModificarReserva(Guid idPasajero, decimal costo) {
+			Costo = costo;
+			IdPasajero = idPasajero;
 		}
 	}
+}
