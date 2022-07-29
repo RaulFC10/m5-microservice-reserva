@@ -3,7 +3,6 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 EXPOSE 80
-ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /src
 
 COPY ["./Reservas.WebApi/Reservas.WebApi.csproj", "src/Reservas.WebApi/"]
@@ -18,7 +17,7 @@ RUN dotnet build -c Release -o /app/build
 FROM build AS publish
 RUN dotnet publish -c Release -o /app/publish
 
-
+ENV ASPNETCORE_ENVIRONMENT=Development
 
 FROM base AS final
 WORKDIR /app
