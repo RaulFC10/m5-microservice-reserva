@@ -56,7 +56,7 @@
       "EXTERNAL",
       "EC2"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/microservicio-reserva:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/microservicio-reserva:latest",
     "family": "microservicio-reserva",
     "requiresAttributes": [
       {
