@@ -5,6 +5,9 @@ on:
     types: [opened, reopened]
     branches:    
       - 'develop'
+  push:
+    branches:    
+      - 'develop'
 jobs:
   build:
 
