@@ -1,4 +1,4 @@
-name: compilación
+name: release
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'main'
 jobs:
   release:
-    needs: build
+
     runs-on: ubuntu-latest
     environment: production
 
