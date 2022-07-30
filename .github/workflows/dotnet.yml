@@ -1,13 +1,9 @@
 name: compilación
 
 on:
-  pull_request:
-    types: [opened, reopened]
-    branches:    
-      - 'develop'
   push:
     branches:    
-      - 'develop'
+      - feature/*
       
 jobs:
   build:
