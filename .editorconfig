@@ -6,4 +6,4 @@ indent_size = 4
 csharp_new_line_before_open_brace = control_blocks
 
 # IDE0055: Fix formatting
-dotnet_diagnostic.IDE0055.severity = error
+dotnet_diagnostic.IDE0055.severity = warning
