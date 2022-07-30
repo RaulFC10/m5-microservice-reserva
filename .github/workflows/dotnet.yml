@@ -100,4 +100,4 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: api-servicio
         cluster: api-cluster
-        wait-for-service-stability: true
+        wait-for-service-stability: true 
