@@ -28,7 +28,7 @@ namespace Reservas.WebApi {
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 			if (env.IsDevelopment())
 			{
-				app.UseDeveloperExceptionPage(); s
+				app.UseDeveloperExceptionPage();
 			}
 			app.UseSwagger();
 			app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reservas.WebApi v1"));
