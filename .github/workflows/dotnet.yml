@@ -5,22 +5,6 @@ on:
     types: [opened, reopened]
     branches:    
       - 'develop'
-  push:
-    branches:    
-      - 'develop'
-
-env:
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: microservice-reserva
-  ECS_SERVICE: microservice-reserva-servicio
-  ECS_CLUSTER: microservice-reserva-cluster
-  ECS_TASK_DEFINITION: task-definition.json
-  CONTAINER_NAME: microservice-reserva
-
-
-permissions:
-  contents: read
-
 jobs:
   build:
 
@@ -69,7 +53,6 @@ jobs:
         dotnet test --no-build --verbosity normal
         dotnet-coverage collect 'dotnet test Reservas.Test' -f xml  -o 'coverage.xml'
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -77,14 +60,14 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: us-east-1
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -94,7 +77,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
+        ECR_REPOSITORY: microservice-reserva
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -107,14 +90,14 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: ${{ env.ECS_TASK_DEFINITION }}
-        container-name: ${{ env.CONTAINER_NAME }}
+        task-definition: task-definition.json
+        container-name: microservice-reserva
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: ${{ env.ECS_SERVICE }}
-        cluster: ${{ env.ECS_CLUSTER }}
+        service: microservice-reserva-servicio
+        cluster: microservice-reserva-cluster
         wait-for-service-stability: true
