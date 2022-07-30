@@ -23,7 +23,7 @@ namespace Reservas.Domain.Model.Reservas {
 
 		public IReadOnlyCollection<VueloReserva> VueloReserva {
 			get {
-				//test
+				//commentary
 				return new ReadOnlyCollection<VueloReserva>(_vueloReserva.ToList());
 			}
 		}
