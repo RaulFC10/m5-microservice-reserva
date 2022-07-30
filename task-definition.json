@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/microservice-reserva:latest",
+      "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/microservicio-reserva:a1c4ddd58dc5f319e248fb10299c28fcdd0be23c",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "microservice-reserva"
+      "name": "microservicio-reserva"
     }
   ],
   "placementConstraints": [],
@@ -56,8 +56,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/microservice-reserva:latest",
-  "family": "microservice-reserva",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/microservicio-reserva:8",
+  "family": "microservicio-reserva",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -73,7 +73,7 @@
   "networkMode": null,
   "runtimePlatform": null,
   "cpu": "1024",
-  "revision": 2,
+  "revision": 8,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,

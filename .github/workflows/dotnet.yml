@@ -8,6 +8,7 @@ on:
   push:
     branches:    
       - 'develop'
+      
 jobs:
   build:
 
@@ -56,6 +57,7 @@ jobs:
         dotnet test --no-build --verbosity normal
         dotnet-coverage collect 'dotnet test Reservas.Test' -f xml  -o 'coverage.xml'
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -63,7 +65,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -80,7 +82,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: microservice-reserva
+        ECR_REPOSITORY: microservicio-reserva
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
@@ -94,13 +96,13 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: microservice-reserva
+        container-name: microservicio-reserva
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: microservice-reserva-servicio
-        cluster: microservice-reserva-cluster
+        service: microservicio-reserva-servicio
+        cluster: microservicio-reserva-cluster
         wait-for-service-stability: true
