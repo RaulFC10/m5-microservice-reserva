@@ -3,7 +3,7 @@ services:
         build: .
         container_name: microservice-reserva
         ports: 
-            - "8080:80"
+            - "8081:80"
         environment:
             SERVER: "sqlServer"
             PORT: 1433

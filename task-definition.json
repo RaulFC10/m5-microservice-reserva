@@ -5,13 +5,13 @@
     "inferenceAccelerators": [],
     "containerDefinitions": [
         {
-            "name": "api-container",
-            "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/api:latest",
+            "name": "reserva-api",
+            "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/reserva-api",
             "resourceRequirements": null,
             "essential": true,
             "portMappings": [
                 {
-                    "hostPort": "8080",
+                    "hostPort": "8081",
                     "containerPort": "80",
                     "protocol": "tcp"
                 }
@@ -39,6 +39,6 @@
     "memory": "2GB",
     "cpu": "1 vcpu",
     "placementConstraints": [],
-    "family": "api",
+    "family": "reserva-api",
     "tags": []
 }
