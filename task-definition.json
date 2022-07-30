@@ -29,7 +29,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/reserva01",
+      "image": "455697982171.dkr.ecr.us-east-1.amazonaws.com/reserva01:latest",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -56,7 +56,7 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/reserva01:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:455697982171:task-definition/reserva01:1:latest",
   "family": "reserva01",
   "requiresAttributes": [
     {
